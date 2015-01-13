@@ -25,6 +25,11 @@ and what you should write is the favNum function that makes the code above work,
 
 
   //Code Here for first
+
+var first = function(array, cbFunc) {
+    var firstName = array[0];
+    cbFunc(firstName);
+};
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
@@ -40,6 +45,11 @@ first(names, function(firstName){
 
   //Code Here for last
 
+var last = function(array, cbFunc) {
+  var lastName = array[array.length - 1];
+  cbFunc(lastName);
+};
+
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
   console.log('The last name in names is ', lastName);
@@ -47,20 +57,21 @@ last(names, function(lastName){
 
 
 
-
-
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
+//Code Here for multiply
 
-
-
-
-  //Code Here for multiply
+var multiply = function(num1, num2, cbFunc) {
+  var answer = num1 * num2;
+  cbFunc(answer);
+};
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
-})
+});
+
+
 
 
 
@@ -72,7 +83,20 @@ multiply(4, 3, function(answer){
 
 
 
-  //Code Here for contains
+ //Code Here for contains
+
+ var contains = function(array, name, cbFunc) {
+  var result;
+  for (var i = 0; array.length; i++) {
+    if (array[i] === name) {
+      result = true;
+      break;
+    } else {
+      result = false;
+    }
+  }
+    cbFunc(result);
+ };
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 contains(names, 'Colt', function(result){
@@ -93,6 +117,10 @@ contains(names, 'Colt', function(result){
 
 
     //Code Here for uniq
+
+var uniq = function(names, ) {
+
+}
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 uniq(names, function(uniqArr){
